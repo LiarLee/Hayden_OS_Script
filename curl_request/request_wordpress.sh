@@ -1,5 +1,6 @@
 #!/bin/bash
 #
+# This is for test the ingres controller and use the client to curl the elb address.
 
 while true;
 do
