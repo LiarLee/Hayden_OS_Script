@@ -1,0 +1,6 @@
+kprobe:vfs_read / comm == "dd" /
+{ 
+   @x++;
+   printf("Hello, %s, %d, %s! \n", comm, pid, probe);
+   print(@x);
+}

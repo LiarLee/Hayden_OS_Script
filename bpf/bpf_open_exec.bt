@@ -1,0 +1,6 @@
+kprobe:open_exec 
+{
+    @x++;
+    printf("%d, %s", pid, comm);
+    print(@x);
+}

@@ -1,0 +1,8 @@
+ #!/usr/bin/perl
+ # filename: 16to10
+
+ for ($i = 0; $i < @ARGV; $i++)
+ {
+   $val = hex($ARGV[$i]);
+   printf("0x%x\t= %d\n", $val, $val);
+ }

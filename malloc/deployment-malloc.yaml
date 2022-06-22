@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: malloc
+spec:
+  selector:
+    matchLabels:
+      app: malloc
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: malloc
+    spec:
+      containers:
+      - name: malloc
+        image: hayden-malloc:latest
+        args: ["200"]
+        resources:
+          requests:
+            cpu: 0.25
+            memory: 210Mi
+          limits:
+            cpu: 0.25
+            memory: 210Mi
