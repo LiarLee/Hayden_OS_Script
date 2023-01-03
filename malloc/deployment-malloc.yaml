@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: malloc
-        image: hayden-malloc:latest
+        image: zhaojiew/mem_alloc:latest
         args: ["200"]
         resources:
           requests:
