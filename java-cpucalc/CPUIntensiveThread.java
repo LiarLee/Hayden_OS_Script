@@ -1,6 +1,3 @@
-package com.example.myapp;
-
-
 import static java.lang.Math.*;
 
 class ThreadDemo extends Thread {
@@ -9,23 +6,17 @@ class ThreadDemo extends Thread {
 
     ThreadDemo(String name) {
         threadName = name;
-        System.out.println("Creating " + threadName);
     }
 
     public void run() {
-        System.out.println("Running " + threadName);
-
-        System.out.println("Thread: " + threadName);
         double degrees = 45.0;
         double radians = toRadians(degrees);
         while (true) {
             double multisin = sin(sin(sin(sin(radians))));
-            System.out.println(threadName + ": " + multisin);
         }
     }
 
     public void start() {
-        System.out.println("Starting " + threadName);
         if (t == null) {
             t = new Thread(this, threadName);
             t.start();
