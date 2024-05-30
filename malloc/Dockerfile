@@ -2,9 +2,9 @@ FROM reg.liarlee.site/docker.io/alpine
 
 RUN apk add build-base
 
-COPY mem.c .
+COPY mem-new.c .
 
-RUN gcc -static -o mem mem.c
+RUN gcc -static -o mem mem-new.c
 
 
 FROM alpine
