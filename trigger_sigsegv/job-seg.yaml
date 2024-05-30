@@ -1,23 +1,19 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: batch/v1
+kind: Job
 metadata:
   name: malloc
 spec:
-  selector:
-    matchLabels:
-      app: malloc
-  replicas: 20
+  backoffLimit: 3
+  parallelism: 3
   template:
     metadata:
       labels:
         app: malloc
     spec:
-      nodeSelector:
-        app: mem
+      restartPolicy: Never
       containers:
       - name: malloc
-        image: 177679732782.dkr.ecr.cn-north-1.amazonaws.com.cn/hayden-malloc:latest
-        args: ["100"]
+        image: reg.liarlee.site/library/sigsegv:latest
         resources:
           requests:
             cpu: 0.25

@@ -1,4 +1,4 @@
-FROM alpine
+FROM reg.liarlee.site/docker.io/alpine
 
 RUN apk add build-base
 

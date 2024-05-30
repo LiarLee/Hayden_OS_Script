@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
         printf("FAILED.");
 
     // set 0 to all memory address.
-    memset(p, 0, n);
+    memset(p, "a", n);
 
     // catch_sigterm and sleep.
     catch_sigterm();
