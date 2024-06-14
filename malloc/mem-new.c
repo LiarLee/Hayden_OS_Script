@@ -26,6 +26,9 @@ void catch_sigterm()
 
 int main(int argc, char *argv[])
 {
+    printf("location of code :  %p\n", (void *) main);
+    printf("location of heap :  %p\n", (void *) malloc(1));
+
     if (argc != 2)
     {
         fprintf(stderr, "Usage: %s <memory size in MB>\n", argv[0]);
@@ -50,9 +53,10 @@ int main(int argc, char *argv[])
     }
 
     printf("SUCCESS.\n");
+    printf("location of stack : %p\n", (void *) &p);
 
-    // Correctly initialize allocated memory to 'a'
-    memset(p, 'a', n);
+    // Correctly initialize allocated memory to '0'
+    memset(p, '0', n);
 
     catch_sigterm();
     pause();
